@@ -6,8 +6,8 @@ node{
    stage('Build')
     
    {
-      cd EurekaDiscoveryServer
-      mvn clean install 
+      //cd EurekaDiscoveryServer
+      //mvn clean install 
       //cd ../MentorProfile
       //mvn clean install
       //cd ../Payments
