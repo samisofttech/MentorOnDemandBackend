@@ -7,7 +7,7 @@ node{
     
    {
       sh """cd EurekaDiscoveryServer
-            touch xyz.txt
+            mvn clean install
       """
       //mvn clean install 
       //cd ../MentorProfile
