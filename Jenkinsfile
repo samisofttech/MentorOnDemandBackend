@@ -7,22 +7,25 @@ node{
     
    {
       sh """cd EurekaDiscoveryServer
-            mvn clean install
+            mvn clean install -DskipTests
+            cd ../MentorProfile
+            mvn clean install -DskipTests
+            cd ../Payments
+            mvn clean install -DskipTests
+            cd ../SkillsTechnologies
+            mvn clean install -DskipTests
+            cd ../SpringBootJwtAuthentication
+            mvn clean install -DskipTests
+            cd ../Trainings
+            mvn clean install -DskipTests
+            cd ../UserProfile
+            mvn clean install -DskipTests
+            cd ../ZuulService
+            mvn clean install -DskipTests
       """
-      //mvn clean install 
-      //cd ../MentorProfile
-      //mvn clean install
-      //cd ../Payments
-      //mvn clean install
-      //cd ../SkillsTechnologies
-      //mvn clean install
-      //cd ../SpringBootJwtAuthentication
-      //mvn clean install
-      //cd ../Trainings
-      //mvn clean install
-      //cd ../UserProfile
-      //mvn clean install
-      //cd ../ZuulService     
+      
    }
+   
+   
    
     } 
