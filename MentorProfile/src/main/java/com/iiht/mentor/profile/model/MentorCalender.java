@@ -15,37 +15,38 @@ public class MentorCalender {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 
-	@NotBlank
-	private String mid;
+	private int mid;
 
-	@NotBlank
 	private Date start_date;
 
-	@NotBlank
 	private Date end_date;
 
-	public MentorCalender(Long id, @NotBlank String mid, @NotBlank Date start_date, @NotBlank Date end_date) {
+	public MentorCalender(int id, @NotBlank int mid, @NotBlank Date start_date, @NotBlank Date end_date) {
 		this.id = id;
 		this.mid = mid;
 		this.start_date = start_date;
 		this.end_date = end_date;
 	}
+	
+	public MentorCalender() {
+		
+	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public String getMid() {
+	public int getMid() {
 		return mid;
 	}
 
-	public void setMid(String mid) {
+	public void setMid(int mid) {
 		this.mid = mid;
 	}
 

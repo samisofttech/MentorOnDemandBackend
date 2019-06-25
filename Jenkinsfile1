@@ -1,0 +1,26 @@
+node {
+   
+   stage('git Checkout') {
+      checkout scm 
+	  
+   }
+   stage('Build') {
+      
+	  sh """
+	  cd foldername
+	  mvn clean install -DskipTests
+	  cd ../foldername
+	  mvn clean install -DskipTests
+	  cd ../foldername
+	  """
+	  
+	  
+   }
+   stage('Docker Build') {
+    
+       sh """
+           docker build . -t mentor_on_demand    
+	   """
+      
+   }
+}

@@ -7,6 +7,6 @@ import com.iiht.mentor.skills.technologies.model.SkillsTechnologiesEntity;
 
 
 @Repository
-public interface SkillsTechnologiesRepositorydao extends JpaRepository<SkillsTechnologiesEntity, Long>{
+public interface SkillsTechnologiesRepositorydao extends JpaRepository<SkillsTechnologiesEntity, Integer>{
 
 }

@@ -7,33 +7,28 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
-
-
 @Entity
 @Table(name = "MentorSkill")
 public class MentorSkill {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 
-	@NotBlank
-	private Long mid;
+	private int mid;
 
-	@NotBlank
-	private Long sid;
+	private int sid;
 
 	private String self_rating;
 
-	@NotBlank
-	private Integer years_of_exp;
+	private int years_of_exp;
 
 	@NotBlank
 	private String trainings_delivered;
 
 	private String facilities_offered;
 
-	public MentorSkill(Long id, @NotBlank Long mid, @NotBlank Long sid, String self_rating,
+	public MentorSkill(int id, @NotBlank int mid, @NotBlank int sid, String self_rating,
 			@NotBlank Integer years_of_exp, @NotBlank String trainings_delivered, String facilities_offered) {
 		this.id = id;
 		this.mid = mid;
@@ -43,29 +38,31 @@ public class MentorSkill {
 		this.trainings_delivered = trainings_delivered;
 		this.facilities_offered = facilities_offered;
 	}
-	
+	public MentorSkill() {
+		
+	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public Long getMid() {
+	public int getMid() {
 		return mid;
 	}
 
-	public void setMid(Long mid) {
+	public void setMid(int mid) {
 		this.mid = mid;
 	}
 
-	public Long getSid() {
+	public int getSid() {
 		return sid;
 	}
 
-	public void setSid(Long sid) {
+	public void setSid(int sid) {
 		this.sid = sid;
 	}
 

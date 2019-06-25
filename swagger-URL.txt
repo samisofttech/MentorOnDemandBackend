@@ -1,0 +1,5 @@
+MentorProfile 	  - 	http://localhost:8958/swagger-ui.html
+Payments 	  - 	http://localhost:8957/swagger-ui.html
+Skill Technology  -	http://localhost:8960/swagger-ui.html
+Traning           -     http://localhost:8955/swagger-ui.html
+Userprofile       -     http://localhost:8954/swagger-ui.html

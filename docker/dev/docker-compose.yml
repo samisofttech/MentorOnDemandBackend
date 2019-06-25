@@ -1,0 +1,46 @@
+version: '2'
+services:
+
+ mentorprofile:
+  image: mentorprofile
+  container_name: mentorprofile
+  ports:
+  - "8958:8958"
+  volumes:
+  - /logs/mentorprofile/:/logs
+  environment:
+  - MYSQL_URL=jdbc:mysql://mysql:3306/learner_portal?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+  - FLOW_FILE_PATH=/logs/
+ 
+ eureka:
+  image: eureka
+  container_name: eureka
+  ports:
+  - "9090:9090"
+  
+ zuul:
+  image: zuul
+  container_name: zuul
+  ports:
+  - "8989:8989"
+  
+ authentication:
+  image: authentication
+  container_name: authentication
+  ports:
+  - "8080:8080"
+  volumes:
+  - /logs/authentication/:/logs
+  environment:
+  - MYSQL_URL=jdbc:mysql://mysql:3306/learner_portal?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+  - FLOW_FILE_PATH=/logs/
+  
+ mysql:
+    image: mysql
+    container_name: mysql
+    ports:
+     - 3306:3306
+    volumes:
+     - /var/local/digiplat/volumes/mysql/data/db:/data/db
+     - /var/local/digiplat/volumes/mysql/data/configdb:/data/configdb
+

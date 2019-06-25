@@ -1,0 +1,16 @@
+FROM maven:alpine
+
+RUN mkdir -p /opt/AllJars
+ADD EurekaDiscoveryServer/target/EurekaDiscoveryServer-0.0.1-SNAPSHOT.jar /opt/AllJars
+
+ADD MentorProfile/target/MentorProfile-0.0.1-SNAPSHOT.jar/opt/AllJars 
+
+ADD SpringBootJwtAuthentication/target/authentication-0.0.1.jar/opt/AllJars 
+
+ADD EurekaDiscoveryServer/target/EurekaDiscoveryServer-0.0.1-SNAPSHOT.jar /opt/AllJars 
+
+ADD EurekaDiscoveryServer/target/EurekaDiscoveryServer-0.0.1-SNAPSHOT.jar /opt/AllJars 
+
+ADD start.sh /opt/AllJars
+
+CMD ["sh", "start.sh"]

@@ -7,44 +7,45 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
-
 @Entity
-@Table(name = "skillstechtable")
+@Table(name = "skills")
 public class SkillsTechnologiesEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 	
 	@NotBlank
 	private String skillname;
 	
-	//TOC
-	
-	@NotBlank
 	private String duration;
 	
-	@NotBlank
 	private String prerequites;
 	
-	@NotBlank
-	private Long price;
+	private long price;
+	
+	public SkillsTechnologiesEntity(String skillName) {
+		this.skillname = skillName;
+	}
+
+	public SkillsTechnologiesEntity() {
+		
+	}
 
 	
-
-	public Long getPrice() {
+	public long getPrice() {
 		return price;
 	}
 
-	public void setPrice(Long price) {
+	public void setPrice(long price) {
 		this.price = price;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -72,6 +73,31 @@ public class SkillsTechnologiesEntity {
 
 	public void setPrerequites(String prerequites) {
 		this.prerequites = prerequites;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((skillname == null) ? 0 : skillname.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		SkillsTechnologiesEntity other = (SkillsTechnologiesEntity) obj;
+		if (skillname == null) {
+			if (other.skillname != null)
+				return false;
+		} else if (!skillname.equals(other.skillname))
+			return false;
+		return true;
 	}
 
 	

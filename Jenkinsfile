@@ -26,6 +26,14 @@ node{
       
    }
    
+   stage('Docker Build') {
+    
+       sh """
+           docker build . -t mentor_on_demand    
+	   """
+      
+   }
+   
    
    
     } 

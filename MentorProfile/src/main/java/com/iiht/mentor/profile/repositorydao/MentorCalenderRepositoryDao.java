@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 import com.iiht.mentor.profile.model.MentorCalender;
 
 @Repository
-public interface MentorCalenderRepositoryDao extends JpaRepository<MentorCalender, Long>{
+public interface MentorCalenderRepositoryDao extends JpaRepository<MentorCalender, Integer>{
+	public MentorCalender findByMid(int mid);
+	
 
 }
